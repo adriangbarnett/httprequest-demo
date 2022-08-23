@@ -1,0 +1,40 @@
+# -----------------------------------------
+#   TEST APPLICATION GET AND PPOST
+# -----------------------------------------
+### call the app to get something from database
+GET http://localhost:3001/test
+Content-Type: application/json 
+
+{
+    "url": "http://localhost:3002/dbpost",
+    "method": "GET",
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "name": "bob",
+    "email": "bob@mail.com"
+}
+### call the app to POST something to database
+POST http://localhost:3001/test
+Content-Type: application/json 
+
+{
+    "url": "http://localhost:3002/dbpost",
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "name": "bob",
+    "email": "bob@mail.com"
+}
+
+
+
+# -----------------------------------------
+#   CHECK IF DATABASE IS ALIVE
+# -----------------------------------------
+### Get from database
+GET http://localhost:3002/dbget
+
+### Post to database
+POST http://localhost:3002/dbpost
